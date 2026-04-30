@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      connection_settings: {
+        Row: {
+          api_token: string | null
+          created_at: string
+          endpoint: string | null
+          house_label: string
+          id: string
+          session_cookie: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          api_token?: string | null
+          created_at?: string
+          endpoint?: string | null
+          house_label: string
+          id?: string
+          session_cookie?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          api_token?: string | null
+          created_at?: string
+          endpoint?: string | null
+          house_label?: string
+          id?: string
+          session_cookie?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
