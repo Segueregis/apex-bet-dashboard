@@ -38,7 +38,7 @@ function LoginPage() {
 
   if (user) return <Navigate to="/dashboard" />;
 
-  const handle = async (mode: "in" | "up") => async (e: FormEvent) => {
+  const handle = (mode: "in" | "up") => async (e: FormEvent) => {
     e.preventDefault();
     const parsed = credSchema.safeParse({ email, password });
     if (!parsed.success) { toast.error(parsed.error.issues[0].message); return; }
